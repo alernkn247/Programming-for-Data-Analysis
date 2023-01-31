@@ -1,5 +1,5 @@
-def Sum(a,b,l):
-    listNumbers = list(filter(lambda x: (((x %a==0) or (x % b ==0)) ),l))
+def Sum(a:list,l:list):
+    listNumbers = list(filter(lambda x: len([y for y in a if x%y==0])>0,l))
     return sum(listNumbers)
 
-print(Sum(3,5,list([1,2,3,4,5,6,7,8,9,10])))
+print(Sum(list([3,5,7]),list([1,2,3,4,5,6,7,8,9,10])))
